@@ -1,1 +1,1 @@
-##App to learn more about RN Components
+# App to learn more about RN Components
