@@ -23,7 +23,7 @@ const FlatListMenuItem = ({ menuItem }: FlatListMenuItemProps) => {
                 <Icon
                     name={menuItem.icon}
                     size={23}
-                    color='#ccc'
+                    color='#5856D6'
                 />
 
                 <Text style={styles.itemText}>{menuItem.name}</Text>
@@ -34,7 +34,7 @@ const FlatListMenuItem = ({ menuItem }: FlatListMenuItemProps) => {
                     // style={styles.arrowIcon}
                     name='chevron-forward-outline'
                     size={23}
-                    color='#ccc'
+                    color='#5856D6'
                 />
             </View>
         </TouchableOpacity>
