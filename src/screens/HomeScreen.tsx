@@ -8,8 +8,6 @@ import { ItemSeparator } from '../components/ItemSeparator';
 
 const HomeScreen = () => {
 
-
-
     return (
         <View style={{ flex: 1, ...styles.globalMargin }}>
 
