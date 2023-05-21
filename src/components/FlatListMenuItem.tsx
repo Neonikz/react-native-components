@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { View, Text, StyleSheet } from 'react-native';
 import { MenuItem } from '../interfaces/appInterfaces';
 import Icon from 'react-native-vector-icons/Ionicons'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
+import { ThemeContext } from '../context/themeContext/ThemeContext';
 
 interface FlatListMenuItemProps {
     menuItem: MenuItem
@@ -12,7 +13,7 @@ interface FlatListMenuItemProps {
 const FlatListMenuItem = ({ menuItem }: FlatListMenuItemProps) => {
 
     const navigation = useNavigation()
-    // const { colors } = useTheme()
+    const { theme: { colors } } = useContext(ThemeContext)
 
     return (
         <TouchableOpacity
@@ -24,10 +25,13 @@ const FlatListMenuItem = ({ menuItem }: FlatListMenuItemProps) => {
                 <Icon
                     name={menuItem.icon}
                     size={23}
-                    color='#5856D6'
+                    color={colors.primary}
                 />
 
-                <Text style={styles.itemText}>{menuItem.name}</Text>
+                <Text style={{
+                    ...styles.itemText,
+                    color: colors.text
+                }}>{menuItem.name}</Text>
 
                 <View style={{ flex: 1 }} />
 
@@ -35,7 +39,7 @@ const FlatListMenuItem = ({ menuItem }: FlatListMenuItemProps) => {
                     // style={styles.arrowIcon}
                     name='chevron-forward-outline'
                     size={23}
-                    color='#5856D6'
+                    color={colors.primary}
                 />
             </View>
         </TouchableOpacity>

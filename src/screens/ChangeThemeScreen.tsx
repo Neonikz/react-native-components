@@ -6,7 +6,7 @@ import { ThemeContext } from '../context/themeContext/ThemeContext'
 
 export const ChangeThemeScreen = () => {
 
-    const { setDarkTheme } = useContext(ThemeContext)
+    const { setDarkTheme, setLightTheme, theme: { colors } } = useContext(ThemeContext)
 
     return (
         <View
@@ -14,25 +14,49 @@ export const ChangeThemeScreen = () => {
         >
             <HeaderTitle title='Theme' />
 
-            <TouchableOpacity
-                onPress={setDarkTheme}
-                style={{
-                    backgroundColor: '#5856D6',
-                    justifyContent: 'center',
-                    width: 150,
-                    height: 50,
-                    borderRadius: 20
-                }}
-                activeOpacity={0.8}
-            >
-                <Text style={{
-                    color: '#fff',
-                    textAlign: 'center',
-                    fontSize: 22,
-                }}>
-                    Light / Dark
-                </Text>
-            </TouchableOpacity>
+            <View style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between'
+            }}>
+                <TouchableOpacity
+                    onPress={setLightTheme}
+                    style={{
+                        backgroundColor: colors.primary,
+                        justifyContent: 'center',
+                        width: 150,
+                        height: 50,
+                        borderRadius: 20
+                    }}
+                    activeOpacity={0.8}
+                >
+                    <Text style={{
+                        color: '#fff',
+                        textAlign: 'center',
+                        fontSize: 22,
+                    }}>
+                        Light
+                    </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    onPress={setDarkTheme}
+                    style={{
+                        backgroundColor: colors.primary,
+                        justifyContent: 'center',
+                        width: 150,
+                        height: 50,
+                        borderRadius: 20
+                    }}
+                    activeOpacity={0.8}
+                >
+                    <Text style={{
+                        color: '#fff',
+                        textAlign: 'center',
+                        fontSize: 22,
+                    }}>
+                        Dark
+                    </Text>
+                </TouchableOpacity>
+            </View>
         </View>
     )
 }
