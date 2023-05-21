@@ -12,6 +12,7 @@ interface FlatListMenuItemProps {
 const FlatListMenuItem = ({ menuItem }: FlatListMenuItemProps) => {
 
     const navigation = useNavigation()
+    // const { colors } = useTheme()
 
     return (
         <TouchableOpacity
